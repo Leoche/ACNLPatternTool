@@ -729,7 +729,7 @@ main .left, .center, .right {
 main .left {
   padding-right: 40px;
 }
-main .center canvas, main .left canvas {
+main .center canvas, main .left canvas.fordrawing {
   box-shadow: 0px 12px 12px -3px rgba(0,0,0,0.3);
 }
 main .center .colorPicker-menu {
@@ -810,7 +810,6 @@ canvas.fordrawing{
   overflow: hidden;
 }
 .render-preview{
-  border: 3px solid #7e7261;;
   width: 196px;
   height: 300px;
   border-radius: 5px;
