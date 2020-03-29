@@ -71,6 +71,7 @@
               <object class="svg nav brown-circle" :data="barcodeSvg"></object>
               Generate QR Code
             </button>
+            <button @click="downTex">Save texture</button>
           </div>
         </div>
       </div>
@@ -441,6 +442,10 @@ export default {
     },
     async downPNG(){
       const img = await generateACNLQR(this.drawingTool);
+      saveAs(img, this.drawingTool.title+".png");
+    },
+    async downTex(){
+      const img = this.$refs.canvas3.toDataURL("image/png");
       saveAs(img, this.drawingTool.title+".png");
     },
     patInfoSave(publish=false){
