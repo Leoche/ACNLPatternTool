@@ -308,7 +308,6 @@ import NookPhoneMenu from '/components/NookPhoneMenu.vue';
 import DrawingTool from '/libs/DrawingTool';
 import ACNLFormat from '/libs/ACNLFormat';
 import origin from '/libs/origin';
-import { applyFilter } from '/libs/xbrz';
 import logger from '/utils/logger';
 import lzString from 'lz-string';
 import { saveAs } from 'file-saver';
@@ -371,7 +370,6 @@ export default {
       allowMoveToLocal: true,
       convertImage: false,
       mainMenu: false,
-      xbrz: true,
       saveSvg,
       scanSvg,
       paintSvg,
@@ -538,7 +536,6 @@ export default {
       this.convertImage = false;
       this.drawingTool.onColorChange();
       this.drawingTool.render();
-      // if (this.xbrz) applyFilter([this.$refs.canvas2, this.$refs.canvas3]);
     },
     extMultiLoad: function(data) {
       this.pickPatterns = data;
@@ -603,7 +600,6 @@ export default {
     else{
       this.onLoad();
       this.drawingTool.render();
-      // if (this.xbrz) applyFilter([this.$refs.canvas2, this.$refs.canvas3]);
     }
 
     document.addEventListener('keydown', (e) => {
